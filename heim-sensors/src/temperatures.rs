@@ -54,6 +54,8 @@ impl fmt::Debug for TemperatureSensor {
     }
 }
 
+unsafe impl Send for TemperatureSensor {}
+
 /// Returns a stream over the [temperature sensors] statistics.
 ///
 /// ## Compatibility
