@@ -64,6 +64,6 @@ unsafe impl Send for TemperatureSensor {}
 /// For other platforms it returns an empty stream.
 ///
 /// [temperature sensors]: ./struct.TemperatureSensor.html
-pub fn temperatures() -> impl Stream<Item = Result<TemperatureSensor>> + Send {
+pub async fn temperatures() -> impl Stream<Item = Result<TemperatureSensor>> + Send {
     sys::temperatures()
 }
